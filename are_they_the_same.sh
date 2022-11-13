@@ -6,17 +6,16 @@ that checks whether the two arrays have the "same" elements, with the
 same multiplicities (the multiplicity of a member is the number of times it appears). 
 "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
 '
-
 #!/bin/bash
 
 function comp() {
     # your code
-    a=($1)
-    b=($2)
-    for i in ${a[@]}
+    a=("$1")
+    b=("$2")
+    for i in "${a[@]}"
     do
       num=$(( "$i" * "$i" ))
-      if [[ "${b[@]}" =~ "${num}" ]]
+      if [[ "${b[*]}" =~ ${num} ]]
       then
         array+=("0")
       else
