@@ -33,4 +33,5 @@ function comp() {
         echo "true"
     fi
 }
+
 comp "$1" "$2"
